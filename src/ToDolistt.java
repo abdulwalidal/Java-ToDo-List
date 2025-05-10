@@ -2,7 +2,7 @@ import java.lang.reflect.Array;
 import java.util.Scanner;
 
 public class ToDolistt {
-    Scanner sc = new Scanner(System.in);
+    static Scanner sc = new Scanner(System.in);
 
     static String[] tasklist = new String[5]; // String Array for storing tasknames with the size of 5
     static int index = 0; // for tracking the tasks in arrays
@@ -20,6 +20,7 @@ public class ToDolistt {
 
         System.out.println(" " + "Enter your choice");
         int choice = sc.nextInt();
+//
 
         switch (choice) {
             case 1:
@@ -32,10 +33,10 @@ public class ToDolistt {
                 deleteTask();
                 break;
             case 4:
-                System.out.println("Update a task");
+                updateTask();
                 break;
             case 5:
-                System.out.println("Exit");
+                exit();
                 break;
         }
     }
@@ -84,6 +85,33 @@ public class ToDolistt {
         tasklist[index] = null; // deleting the duplicate
         System.out.println("Task is deleted");
         display(); // choices will be given again
+    }
+
+
+    public static void updateTask() {  // updating a task
+        System.out.println("Enter the task no you want to update : ");
+        int updatedtaskno = sc.nextInt();
+        sc.nextLine();
+        if((updatedtaskno > 0) && (updatedtaskno <= index) && (tasklist[updatedtaskno-1] != null)) {  // in order to update a task, it must satisfy this coniditon
+            System.out.println("Enter your updated task");
+            String updatedtaskname = sc.nextLine();
+            tasklist[updatedtaskno-1] = updatedtaskname; // the task is updated
+            System.out.println("Task is updated successfully");
+            display();
+
+        }
+        else {
+            System.out.println("ToDolist is empty");
+            display();
+        }
+
+
+    }
+
+
+    public static void exit() {
+        System.out.println("Thankyou for using ToDoList");
+        System.exit(0);
     }
 
 
