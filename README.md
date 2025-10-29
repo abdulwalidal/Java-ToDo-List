@@ -49,7 +49,7 @@ When you run the program, you'll see a menu with the following options:
 Welcome to *** To Do List***
 
  1. Add a Task
- 2. View a Task
+ 2. View Tasks
  3. Delete a Task
  4. Update a Task
  5. Exit
@@ -67,11 +67,11 @@ Welcome to *** To Do List***
 
 ### Code Structure
 
-- **Add Task**: Uses an array (`tasklist[]`) to store task names. The `index` variable tracks the current task count
-- **View Tasks**: Loops through `tasklist[]` to display all tasks
-- **Delete Task**: Removes a task and shifts remaining tasks up in the array
-- **Update Task**: Allows modification of a task based on its number
-- **Exit**: Exits the program using `System.exit(0)`
+- **Add Task**: Uses an array (`tasklist[]`) to store task names. The `index` variable tracks the current task count.
+- **View Tasks**: Loops through `tasklist[]` to display all tasks.
+- **Delete Task**: Removes a task and shifts remaining tasks up in the array.
+- **Update Task**: Allows modification of a task based on its number.
+- **Exit**: Exits the program using `System.exit(0)`.
 
 ### Current Limitations
 
